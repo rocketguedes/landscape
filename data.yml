@@ -1,0 +1,340 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/cncf/landscape2/refs/heads/main/docs/config/schema/data.schema.json
+categories:
+  - name: App Definition and Development
+    subcategories:
+      - name: Database
+        items:
+          - name: CloudNativePG
+            homepage_url: https://www.cloudnative-pg.io/
+            logo: cloudnativepg.svg
+            repo_url: https://github.com/cloudnative-pg/cloudnative-pg
+            project: incubating
+            extra:
+              accepted: "2025-01-21"
+              incubating: "2026-11-02"
+          - name: Meilisearch
+            homepage_url: https://www.meilisearch.com
+            logo: meilisearch.svg
+            repo_url: https://github.com/meilisearch/meilisearch
+          - name: PostgreSQL
+            homepage_url: https://www.postgresql.org/
+            logo: postgresql.svg
+            repo_url: https://github.com/postgres/postgres
+          - name: Valkey
+            homepage_url: https://valkey.io/
+            logo: valkey.svg
+            repo_url: https://github.com/valkey-io/valkey
+          - name: VectorChord
+            homepage_url: https://docs.vectorchord.ai
+            logo: vectorchord.svg
+            repo_url: https://github.com/tensorchord/VectorChord
+            extra:
+              parent_project: PostgreSQL
+      - name: Streaming & Messaging
+        items:
+          - name: LiveKit
+            homepage_url: https://livekit.io
+            logo: livekit-server.svg
+            repo_url: https://github.com/livekit/livekit
+          - name: NATS
+            homepage_url: https://nats.io/
+            logo: nats.svg
+            repo_url: https://github.com/nats-io/nats-server
+            project: graduated
+            extra:
+              accepted: "2018-03-15"
+              incubating: "2018-03-15"
+              graduated: "2026-11-02"
+          - name: ntfy
+            homepage_url: https://ntfy.sh
+            logo: ntfy.svg
+            repo_url: https://github.com/binwiederhier/ntfy
+      - name: Application Definition & Image Build
+        items:
+          - name: Helm
+            homepage_url: https://helm.sh/
+            logo: helm.svg
+            repo_url: https://github.com/helm/helm
+            project: graduated
+            extra:
+              accepted: "2018-06-01"
+              incubating: "2018-06-01"
+              graduated: "2020-05-01"
+          - name: Kustomize
+            homepage_url: https://kustomize.io
+            logo: kustomize.svg
+            repo_url: https://github.com/kubernetes-sigs/kustomize
+            project: graduated
+      - name: Continuous Integration & Delivery
+        items:
+          - name: Flux
+            homepage_url: https://fluxcd.io/
+            logo: flux-cd.svg
+            repo_url: https://github.com/fluxcd/flux2
+            additional_repos:
+              - repo_url: https://github.com/fluxcd/flux-schema
+            project: graduated
+            extra:
+              accepted: "2019-07-15"
+              incubating: "2021-03-12"
+              graduated: "2022-11-30"
+  - name: Orchestration & Management
+    subcategories:
+      - name: Scheduling & Orchestration
+        items:
+          - name: KEDA
+            homepage_url: https://keda.sh/
+            logo: keda.svg
+            repo_url: https://github.com/kedacore/keda
+            project: graduated
+            extra:
+              accepted: "2020-03-12"
+              incubating: "2021-08-18"
+              graduated: "2023-08-22"
+          - name: kubectl
+            homepage_url: https://kubernetes.io/docs/reference/kubectl/
+            logo: kubectl.svg
+            repo_url: https://github.com/kubernetes/kubectl
+            project: graduated
+      - name: Coordination & Service Discovery
+        items:
+          - name: CoreDNS
+            homepage_url: https://coredns.io/
+            logo: coredns.svg
+            repo_url: https://github.com/coredns/coredns
+            project: graduated
+            extra:
+              accepted: "2017-02-27"
+              incubating: "2018-02-26"
+              graduated: "2019-01-24"
+          - name: etcd
+            homepage_url: https://etcd.io/
+            logo: etcd.svg
+            repo_url: https://github.com/etcd-io/etcd
+            project: graduated
+            extra:
+              accepted: "2018-12-11"
+              incubating: "2018-12-11"
+              graduated: "2020-11-24"
+      - name: Service Proxy
+        items:
+          - name: Caddy
+            homepage_url: https://caddyserver.com/
+            logo: caddy.svg
+            repo_url: https://github.com/caddyserver/caddy
+          - name: Envoy
+            homepage_url: https://www.envoyproxy.io
+            logo: envoy.svg
+            repo_url: https://github.com/envoyproxy/envoy
+            project: graduated
+            extra:
+              accepted: "2017-09-13"
+              incubating: "2017-09-13"
+              graduated: "2018-11-28"
+      - name: API Gateway
+        items:
+          - name: Gateway API
+            homepage_url: https://gateway-api.sigs.k8s.io/
+            logo: gateway-api.svg
+            repo_url: https://github.com/kubernetes-sigs/gateway-api
+            project: graduated
+  - name: Runtime
+    subcategories:
+      - name: Cloud Native Storage
+        items:
+          - name: Local Path Provisioner
+            homepage_url: https://github.com/rancher/local-path-provisioner
+            logo: local-path-provisioner.svg
+            repo_url: https://github.com/rancher/local-path-provisioner
+          - name: SeaweedFS
+            homepage_url: https://seaweedfs.com
+            logo: seaweedfs.svg
+            repo_url: https://github.com/seaweedfs/seaweedfs
+      - name: Container Runtime
+        items:
+          - name: containerd
+            homepage_url: https://containerd.io/
+            logo: containerd.svg
+            repo_url: https://github.com/containerd/containerd
+            project: graduated
+            extra:
+              accepted: "2017-03-29"
+              incubating: "2017-03-29"
+              graduated: "2019-02-28"
+      - name: Cloud Native Network
+        items:
+          - name: Blocky
+            homepage_url: https://0xerr0r.github.io/blocky/
+            logo: blocky.svg
+            repo_url: https://github.com/0xERR0R/blocky
+          - name: Cilium
+            homepage_url: https://cilium.io/
+            logo: cilium.svg
+            repo_url: https://github.com/cilium/cilium
+            project: graduated
+            extra:
+              accepted: "2021-10-13"
+              incubating: "2021-10-13"
+              graduated: "2023-10-11"
+          - name: Headscale
+            homepage_url: https://headscale.net
+            logo: headscale.svg
+            repo_url: https://github.com/juanfont/headscale
+  - name: Provisioning
+    subcategories:
+      - name: Automation & Configuration
+        items:
+          - name: Stakater Reloader
+            homepage_url: https://docs.stakater.com/reloader/latest/
+            logo: stakater-reloader.svg
+            repo_url: https://github.com/stakater/Reloader
+          - name: System Upgrade Controller
+            homepage_url: https://github.com/rancher/system-upgrade-controller
+            logo: system-upgrade-controller.svg
+            repo_url: https://github.com/rancher/system-upgrade-controller
+          - name: Task
+            homepage_url: https://taskfile.dev
+            logo: task-taskfile.svg
+            repo_url: https://github.com/go-task/task
+      - name: Security & Compliance
+        items:
+          - name: Authelia
+            homepage_url: https://www.authelia.com
+            logo: authelia.svg
+            repo_url: https://github.com/authelia/authelia
+          - name: cert-manager
+            homepage_url: https://cert-manager.io/
+            logo: cert-manager.svg
+            repo_url: https://github.com/cert-manager/cert-manager
+            project: graduated
+            extra:
+              accepted: "2020-11-10"
+              incubating: "2022-09-19"
+              graduated: "2024-09-29"
+          - name: LLDAP
+            homepage_url: https://github.com/lldap/lldap
+            logo: lldap.svg
+            repo_url: https://github.com/lldap/lldap
+          - name: SOPS
+            homepage_url: https://getsops.io
+            logo: sops.svg
+            repo_url: https://github.com/getsops/sops
+            project: sandbox
+            extra:
+              accepted: "2023-05-17"
+          - name: Vaultwarden
+            homepage_url: https://github.com/dani-garcia/vaultwarden
+            logo: vaultwarden.svg
+            repo_url: https://github.com/dani-garcia/vaultwarden
+      - name: Key Management
+        items:
+          - name: age
+            homepage_url: https://age-encryption.org
+            logo: age.svg
+            repo_url: https://github.com/FiloSottile/age
+  - name: Platform
+    subcategories:
+      - name: Certified Kubernetes - Distribution
+        items:
+          - name: K3s
+            homepage_url: https://k3s.io
+            logo: k3s.svg
+            repo_url: https://github.com/k3s-io/k3s
+            project: sandbox
+            extra:
+              accepted: "2020-08-19"
+  - name: Observability and Analysis
+    subcategories:
+      - name: Observability
+        items:
+          - name: Gatus
+            homepage_url: https://gatus.io
+            logo: gatus.svg
+            repo_url: https://github.com/TwiN/gatus
+          - name: Grafana
+            homepage_url: https://grafana.com/
+            logo: grafana.svg
+            repo_url: https://github.com/grafana/grafana
+          - name: Headlamp
+            homepage_url: https://headlamp.dev
+            logo: headlamp.svg
+            repo_url: https://github.com/kubernetes-sigs/headlamp
+            additional_repos:
+              - repo_url: https://github.com/headlamp-k8s/plugins
+            project: sandbox
+            extra:
+              accepted: "2023-05-17"
+          - name: Hubble UI
+            homepage_url: https://cilium.io/
+            logo: hubble-ui.svg
+            repo_url: https://github.com/cilium/hubble-ui
+            project: graduated
+            extra:
+              parent_project: Cilium
+          - name: Metrics Server
+            homepage_url: https://github.com/kubernetes-sigs/metrics-server
+            logo: metrics-server.svg
+            repo_url: https://github.com/kubernetes-sigs/metrics-server
+            project: graduated
+          - name: Vector
+            homepage_url: https://vector.dev/
+            logo: vector.svg
+            repo_url: https://github.com/vectordotdev/vector
+          - name: VictoriaLogs
+            homepage_url: https://docs.victoriametrics.com/victorialogs/
+            logo: victorialogs.svg
+            repo_url: https://github.com/VictoriaMetrics/VictoriaLogs
+            additional_repos:
+              - repo_url: https://github.com/VictoriaMetrics/victorialogs-datasource
+          - name: VictoriaMetrics
+            homepage_url: https://victoriametrics.com/
+            logo: victoriametrics.svg
+            repo_url: https://github.com/VictoriaMetrics/VictoriaMetrics
+  - name: Workloads & Applications
+    subcategories:
+      - name: Media
+        items:
+          - name: AudioMuse-AI
+            homepage_url: https://github.com/NeptuneHub/AudioMuse-AI
+            logo: audiomuse-ai.svg
+            repo_url: https://github.com/NeptuneHub/AudioMuse-AI
+            additional_repos:
+              - repo_url: https://github.com/NeptuneHub/AudioMuse-AI-NV-plugin
+          - name: Feishin
+            homepage_url: https://github.com/jeffvli/feishin
+            logo: feishin.svg
+            repo_url: https://github.com/jeffvli/feishin
+          - name: Immich
+            homepage_url: https://immich.app
+            logo: immich.svg
+            repo_url: https://github.com/immich-app/immich
+          - name: Navidrome
+            homepage_url: https://www.navidrome.org
+            logo: navidrome.svg
+            repo_url: https://github.com/navidrome/navidrome
+            additional_repos:
+              - repo_url: https://github.com/navidrome/apple-music-plugin
+      - name: Communication
+        items:
+          - name: Fluxer
+            homepage_url: https://fluxer.app
+            logo: fluxer.svg
+            repo_url: https://github.com/fluxerapp/fluxer
+          - name: Soju
+            homepage_url: https://soju.im
+            logo: cncf.svg
+            repo_url: https://github.com/emersion/soju
+            additional_repos:
+              - repo_url: https://codeberg.org/emersion/soju
+            license: AGPL-3.0-only
+            description: A user-friendly IRC bouncer.
+      - name: Utilities
+        items:
+          - name: MaxMind GeoIP Update
+            homepage_url: https://www.maxmind.com
+            logo: maxmind-geoip-update.svg
+            repo_url: https://github.com/maxmind/geoipupdate
+          - name: MicroBin
+            homepage_url: https://microbin.eu
+            logo: cncf.svg
+            repo_url: https://github.com/szabodanika/microbin

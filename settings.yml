@@ -16,11 +16,15 @@ featured_items:
         order: 3
         label: CNCF Sandbox
 
+footer:
+  links:
+    github: "https://github.com/rocketguedes/control-plane"
+
 grid_items_size: medium
 
 header:
   links:
-    github: "https://github.com/rocketguedes/control-plane"
+    github: "https://github.com/rocketguedes/landscape"
   logo: "images/logo_header.svg"
 
 images:

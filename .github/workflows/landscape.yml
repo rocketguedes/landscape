@@ -1,0 +1,76 @@
+name: Deploy Landscape
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Restore landscape2 cache
+        uses: actions/cache@v4
+        with:
+          path: .cache
+          key: landscape2-cache-${{ github.sha }}-${{ github.run_id }}
+          restore-keys: |
+            landscape2-cache-
+
+      - name: Validate and build landscape
+        env:
+          GITHUB_TOKENS: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          mkdir -p build .cache
+          docker run --rm -u "$(id -u):$(id -g)" -w /landscape \
+            -e GITHUB_TOKENS \
+            -v "$PWD:/landscape" \
+            ghcr.io/cncf/landscape2:latest sh -eu -c '
+              landscape2 validate data --data-file data.yml
+              landscape2 validate settings --settings-file settings.yml
+              landscape2 build \
+                --data-file data.yml \
+                --settings-file settings.yml \
+                --logos-path logos \
+                --cache-dir .cache \
+                --output-dir build
+            '
+
+      - name: Prepare GitHub Pages output
+        run: |
+          sed -i 's/<title>CNCF Landscape<\/title>/<title>Guedes Cloud Landscape<\/title>/g' build/index.html
+          cp build/index.html build/404.html
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: build
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
